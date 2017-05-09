@@ -1,0 +1,58 @@
+
+<div class="container">
+  <div class="row center-block text-center">
+    <h1>Eat-Da-Burger!</h1>
+  </div>
+
+  <div>
+    <section class="col-sm-4 center-block text-center">
+
+    <h2>Burgers You Need to Eat!</h2>
+
+    <ul>
+      {{#each burger}}
+        {{#unless this.eaten}}
+          <li>
+            {{this.name}}
+
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="sleepy" value="true">
+              <button type="submit">Eat Me!</button>
+            </form>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+    </section>
+    <section class="col-sm-4 center-block text-center">
+      <h2>Add a New Burger</h2>
+      <img src="/assets/images/burgerpic.png" />
+      <form class="create-update-form" action="/" method="POST">
+
+        <div class="form-group">
+          <label for="ca">Burger Type:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit">Yum!</button>
+      </form>
+    </section>
+    <section class="col-sm-4 center-block text-center">
+    <h2>Burgers You Have Eaten!</h2>
+
+    <ul>
+      {{#each burger}}
+        {{#if this.eaten}}
+          <li>
+            {{this.name}}
+
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </section>
+  </div>
+  <div class="row center-block text-center">
+
+</div>
+</div>
