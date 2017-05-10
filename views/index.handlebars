@@ -15,8 +15,8 @@
           <li>
             {{this.name}}
 
-            <form action="/{{this.id}}?_method=PUT" method="POST">
-              <input type="hidden" name="sleepy" value="true">
+            <form action="/eatBurger" method="POST">
+              <input type="hidden" name="burgerID" value={{this.id}}>
               <button type="submit">Eat Me!</button>
             </form>
           </li>
